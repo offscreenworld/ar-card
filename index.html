@@ -44,6 +44,8 @@
         const portfolioLeftButton = document.querySelector("#portfolio-left-button");
         const portfolioRightButton = document.querySelector("#portfolio-right-button");
         const paintandquestPreviewButton = document.querySelector("#paintandquest-preview-button");
+        const kitchenPreviewButton = document.querySelector("#kitchen-preview-button");
+
 
         let y = 0;
         let currentItem = 0;
@@ -80,6 +82,19 @@
               } else {
                 document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-webm");
                 document.querySelector("#paintandquest-video-webm").play();
+              }
+            });
+
+            kitchenPreviewButton.addEventListener('click', () => {
+              kitchenPreviewButton.setAttribute("visible", false);
+              const testVideo = document.createElement( "video" );
+              const canplayWebm = testVideo.canPlayType( 'video/webm; codecs="vp8, vorbis"' );
+              if (canplayWebm == "") {
+                document.querySelector("#kitchen-video-link").setAttribute("src", "#kitchen-video-mp4");
+                document.querySelector("#kitchen-video-mp4").play();
+              } else {
+                document.querySelector("#kitchen-video-link").setAttribute("src", "#kitchen-video-webm");
+                document.querySelector("#kitchen-video-webm").play();
               }
             });
 
@@ -226,6 +241,13 @@
           <img id="paintandquest-preview" src="./hype-cover.png" />
           <video id="paintandquest-video-mp4" autoplay="false" loop="true" src="./reel.mp4"></video>
           <video id="paintandquest-video-webm" autoplay="false" loop="true" src="./offscreenhype.webm"></video>
+
+          <img id="kitchen-preview" src="./kitchen-cover.png" />
+          <video id="kitchen-video-mp4" autoplay="false" loop="true" src="./kitchen.mp4"></video>
+          <video id="kitchen-video-webm" autoplay="false" loop="true" src="./kitchen.webm"></video>
+
+
+
           <img id="coffeemachine-preview" src="./assets/card-example/portfolio/coffeemachine-preview.png" />
           <img id="peak-preview" src="./assets/card-example/portfolio/peak-preview.png" />
 
@@ -245,8 +267,10 @@
               </a-image>
             </a-entity>
             <a-entity id="portfolio-item1" visible=false>
-              <a-image class="clickable" src="#coffeemachine-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
+              <a-video id="kitchen-video-link" webkit-playsinline playsinline width="1" height="0.552" position="0 0 0"></a-video>
+              <a-image id="kitchen-preview-button" class="clickable" src="#kitchen-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
               </a-image>
+
             </a-entity>
             <a-entity id="portfolio-item2" visible=false>
               <a-image class="clickable" src="#peak-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
@@ -275,7 +299,7 @@
 
           </a-entity>
 
-          
+
 
           <a-text id="text" class="clickable" value="" color="black" align="center" width="2" position="0 -1 0" geometry="primitive:plane; height: 0.1; width: 2;" material="opacity: 0.5"></a-text>
         </a-entity>
