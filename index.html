@@ -55,6 +55,7 @@
         const portfolioRightButton = document.querySelector("#portfolio-right-button");
         const paintandquestPreviewButton = document.querySelector("#paintandquest-preview-button");
         const kitchenPreviewButton = document.querySelector("#kitchen-preview-button");
+        const animPreviewButton = document.querySelector("#anim-preview-button");
 
 
         let y = 0;
@@ -105,6 +106,19 @@
               } else {
                 document.querySelector("#kitchen-video-link").setAttribute("src", "#kitchen-video-webm");
                 document.querySelector("#kitchen-video-webm").play();
+              }
+            });
+
+            animPreviewButton.addEventListener('click', () => {
+              animPreviewButton.setAttribute("visible", false);
+              const testVideo = document.createElement( "video" );
+              const canplayWebm = testVideo.canPlayType( 'video/webm; codecs="vp8, vorbis"' );
+              if (canplayWebm == "") {
+                document.querySelector("#anim-video-link").setAttribute("src", "#anim-video-mp4");
+                document.querySelector("#anim-video-mp4").play();
+              } else {
+                document.querySelector("#anim-video-link").setAttribute("src", "#anim-video-webm");
+                document.querySelector("#anim-video-webm").play();
               }
             });
 
@@ -249,16 +263,18 @@
           <img id="icon-left" src="./left-arrow.png" />
           <img id="icon-right" src="./right-arrow.png" />
           <img id="paintandquest-preview" src="./hype-cover.png" />
-          <video id="paintandquest-video-mp4" autoplay="false" loop="true" src="./reel.mp4"></video>
-          <video id="paintandquest-video-webm" autoplay="false" loop="true" src="./offscreenhype.webm"></video>
+          <video id="paintandquest-video-mp4" autoplay="false" loop="false" src="./reel.mp4"></video>
+          <video id="paintandquest-video-webm" autoplay="false" loop="false" src="./offscreenhype.webm"></video>
 
           <img id="kitchen-preview" src="./kitchen-cover.png" />
-          <video id="kitchen-video-mp4" autoplay="false" loop="true" src="./kitchen.mp4"></video>
-          <video id="kitchen-video-webm" autoplay="false" loop="true" src="./kitchen.webm"></video>
+          <video id="kitchen-video-mp4" autoplay="false" loop="false" src="./kitchen.mp4"></video>
+          <video id="kitchen-video-webm" autoplay="false" loop="false" src="./kitchen.webm"></video>
 
-          <img id="coffeemachine-preview" src="./assets/card-example/portfolio/coffeemachine-preview.png" />
-          <img id="peak-preview" src="./assets/card-example/portfolio/peak-preview.png" />
+          <img id="anim-preview" src="./anim-cover.png" />
+          <video id="anim-video-mp4" autoplay="false" loop="false" src="./anim.mp4"></video>
+          <video id="anim-video-webm" autoplay="false" loop="false" src="./anim.webm"></video>
 
+          
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable">
@@ -281,7 +297,8 @@
 
             </a-entity>
             <a-entity id="portfolio-item2" visible=false>
-              <a-image class="clickable" src="#peak-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
+              <a-video id="anim-video-link" webkit-playsinline playsinline width="1" height="0.552" position="0 0 0"></a-video>
+              <a-image id="anim-preview-button" class="clickable" src="#anim-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
               </a-image>
             </a-entity>
 
