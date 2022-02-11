@@ -22,7 +22,7 @@
           emailButton.setAttribute("visible", true);
         }, 600);
         setTimeout(() => {
-                  locationButton.setAttribute("visible", true);
+        locationButton.setAttribute("visible", true);
                 }, 900);
 
         let currentTab = '';
@@ -261,20 +261,17 @@
           <img id="icon-location" src="./instagram.png" />
           <img id="icon-profile" src="./instagram.png" />
           <img id="icon-email" src="./email.png" />
-          <img id="icon-play" src="./assets/card-example/icons/play.png" />
           <img id="icon-left" src="./left-arrow.png" />
           <img id="icon-right" src="./right-arrow.png" />
-          <img id="paintandquest-preview" src="./hype-cover.png" />
-          <video muted id="paintandquest-video-mp4" autoplay="false" loop="false" src="./reel.mp4"></video>
-          <video id="paintandquest-video-webm" autoplay="false" loop="false" src="./offscreenhype.webm"></video>
 
-          <img id="kitchen-preview" src="./kitchen-cover.png" />
-          <video muted id="kitchen-video-mp4" autoplay="false" loop="false" src="./kitchen.mp4"></video>
-          <video muted id="kitchen-video-webm" autoplay="false" loop="false" src="./kitchen.webm"></video>
+          <video muted id="paintandquest-video-mp4" autoplay="true" loop="true" src="./reel.mp4"></video>
+          <video muted id="paintandquest-video-webm" autoplay="true" loop="true" src="./offscreenhype.webm"></video>
 
-          <img id="anim-preview" src="./anim-cover.png" />
-          <video muted id="anim-video-mp4" autoplay="false" loop="false" src="./anim.mp4"></video>
-          <video muted id="anim-video-webm" autoplay="false" loop="false" src="./anim.webm"></video>
+          <video muted id="kitchen-video-mp4" autoplay="true" loop="true" src="./kitchen.mp4"></video>
+          <video muted id="kitchen-video-webm" autoplay="true" loop="true" src="./kitchen.webm"></video>
+
+          <video muted id="anim-video-mp4" autoplay="true" loop="true" src="./anim.mp4"></video>
+          <video muted id="anim-video-webm" autoplay="true" loop="true" src="./anim.webm"></video>
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable">
