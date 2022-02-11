@@ -20,10 +20,10 @@
         }, 300);
         setTimeout(() => {
           emailButton.setAttribute("visible", true);
-        }, 600);
+        }, 300);
         setTimeout(() => {
         locationButton.setAttribute("visible", true);
-                }, 900);
+                }, 300);
 
         let currentTab = '';
         webButton.addEventListener('click', function (evt) {
@@ -35,18 +35,18 @@
           currentTab = 'email';
         });
         profileButton.addEventListener('click', function (evt) {
-         text.setAttribute("value", "AR, VR solutions and consultation");
+         text.setAttribute("value", "For all your post-production needs");
          currentTab = 'profile';
        });
        locationButton.addEventListener('click', function (evt) {
          console.log("loc");
-         text.setAttribute("value", "Vancouver, Canada | Hong Kong");
+         text.setAttribute("value", "London, Europe, and Beyond");
          currentTab = 'location';
        });
 
         text.addEventListener('click', function (evt) {
           if (currentTab === 'web') {
-            window.location.href="https://offscreenlimited.com";
+            window.location.href= "https://offscreenlimited.com";
           }
         });
       }
@@ -154,9 +154,9 @@
                 showPortfolio(() => {
                   setTimeout(() => {
                     showInfo();
-                  }, 300);
+                  }, 100);
                 });
-              }, 300);
+              }, 100);
             });
           });
           this.el.addEventListener('targetLost', event => {
@@ -249,7 +249,7 @@
     <div class="example-container">
       <div id="example-scanning-overlay" class="hidden">
 	<div class="inner">
-	  <img src="./card.png"/>
+	  <img src="./offbc.png"/>
 	  <div class="scanline"></div>
 	</div>
       </div>
@@ -261,15 +261,14 @@
           <img id="icon-location" src="./instagram.png" />
           <img id="icon-profile" src="./instagram.png" />
           <img id="icon-email" src="./email.png" />
-          <img id="icon-play" src="./assets/card-example/icons/play.png" />
+          <img id="icon-play" src="./play-button.png" />
           <img id="icon-left" src="./left-arrow.png" />
           <img id="icon-right" src="./right-arrow.png" />
           <img id="paintandquest-preview" src="./hype-cover.png" />
 		
-          <video muted id="paintandquest-video-mp4" autoplay="false" loop="true" src="./reel.mp4"></video>
-          <video id="paintandquest-video-webm" autoplay="false" loop="true" src="./offscreenhype.webm"></video>
+          <video muted id="paintandquest-video-mp4" autoplay="true" loop="true" src="./reel.mp4"></video>
+          <video id="paintandquest-video-webm" autoplay="true" loop="true" src="./offscreenhype.webm"></video>
 
-          <img id="kitchen-preview" src="./kitchen-cover.png" />
           <video muted id="kitchen-video-mp4" autoplay="true" loop="true" src="./kitchen.mp4"></video>
           <video muted id="kitchen-video-webm" autoplay="true" loop="true" src="./kitchen.webm"></video>
 
@@ -293,7 +292,6 @@
             </a-entity>
             <a-entity id="portfolio-item1" visible=true>
               <a-video id="kitchen-video-link" webkit-playsinline playsinline width="1" height="0.552" position="0 0 0"></a-video>
-              <a-image id="kitchen-preview-button" class="clickable" src="#kitchen-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
               </a-image>
 
             </a-entity>
