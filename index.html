@@ -227,7 +227,7 @@
 
       <a-scene mindar-image="imageTargetSrc: ./targets.mind; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-assets>
-          <img id="card" src="./reel.gif" />
+          <img id="card" src="./card.png" />
           <img id="icon-web" src="./internet.png" />
           <img id="icon-location" src="./instagram.png" />
           <img id="icon-profile" src="./instagram.png" />
@@ -238,7 +238,6 @@
           <img id="paintandquest-preview" src="./hype-cover.png" />
           <video muted id="paintandquest-video-mp4" autoplay="true" loop="true" src="./reel.mp4"></video>
           <video muted id="paintandquest-video-webm" autoplay="true" loop="true" src="./offscreenhype.webm"></video>
-
                 </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable">
@@ -255,9 +254,6 @@
               </a-image>
             </a-entity>
         
-
-            <a-image visible=false id="portfolio-left-button" class="clickable" src="#icon-left" position="-0.7 0 0" height="0.15" width="0.15"></a-image>
-            <a-image visible=false id="portfolio-right-button" class="clickable" src="#icon-right" position="0.7 0 0" height="0.15" width="0.15"></a-image>
 
             <a-image visible=false id="profile-button" class="clickable" src="#icon-profile" position="-0.7 -0.2 0" height="0.15" width="0.15"
               animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
